@@ -6,11 +6,11 @@ import plugins from './plugins'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import "./assets/index.css"
-
+import "@lottiefiles/lottie-player"
 
 createApp(App)
   .use(router)
-  .use(createPinia())
   .use(ElementPlus)
+  .use(createPinia())
   .use(plugins)
   .mount('#app')

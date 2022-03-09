@@ -7,7 +7,14 @@ import externalGlobals from "rollup-plugin-external-globals"
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      template: {
+        compilerOptions:{
+          // 如果不想让编译器解析这个自定义标签
+          isCustomElement: tag => tag.startsWith('lottie-player')
+        }
+      }
+    }),
     // 使用 gzip 来压缩资源.
     viteCompression(),
   ],
@@ -41,6 +48,8 @@ export default defineConfig({
           'element-plus/dist/index.css': 'element-plus/dist/index.css',
           echarts: 'echarts',
           'vue-echarts': 'VueECharts',
+          pinia: "Pinia",
+          '@lottiefiles/lottie-player': "@lottiefiles/lottie-player"
         })
       ]
     }
