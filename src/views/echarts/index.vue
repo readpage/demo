@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, reactive, ref } from "vue";
+import { onMounted, ref } from "vue";
 
 const barLoading = ref(true);
 const barRef = ref()
@@ -56,14 +56,15 @@ const bar = {
 setTimeout(() => {
   barLoading.value = false
   barRef.value.setOption({
-    xAxios: {
-      data: [5, 12, 13, 22, 15]
+    xAxis: {
+      data: ['1', '2', '3', '4', '5']
     },
     series: [{
       data: [5, 12, 13, 22, 15]
     }]
   })
 }, 3000)
+
 </script>
 
 <style lang="scss" scoped>
